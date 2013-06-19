@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pulltorefresharp.android.views.ViewWrapper xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pullToRefresharpWrapper="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ptr_wrapper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    pullToRefresharpWrapper:pullDownTension="0.5"
+    pullToRefresharpWrapper:snapbackDuration="300">
+    <pulltorefresharp.android.widget.ListView
+        android:id="@android:id/list"
+        android:divider="#ccc"
+        android:dividerHeight="1dp"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp" />
+</pulltorefresharp.android.views.ViewWrapper>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+
+    <declare-styleable name="PullToRefresharpWrapper">
+        <attr name="headerId" format="integer" />
+        <attr name="contentViewId" format="integer" />
+        <attr name="pullDownProgressIndicatorId" format="integer" />
+        <attr name="snapbackDuration" format="integer" />
+        <attr name="pullDownTension" format="float" />
+
+        <attr name="pullToRefreshText" format="reference" />
+        <attr name="releaseToRefreshText" format="reference" />
+        <attr name="refreshingText" format="reference" />
+
+        <attr name="ptrHeaderBackground" format="color|reference" />
+        <attr name="headerTextColor" format="color" />
+        <attr name="headerIconDrawable" format="reference" />
+
+        <attr name="pullEnabled" format="boolean" />
+    </declare-styleable>
+
+</resources>

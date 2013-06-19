@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/header_container"
+    android:background="@drawable/ptrsharp_serious_business_gradient"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="bottom">
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+        <pulltorefresharp.android.views.PullDownProgressIndicator
+            android:id="@+id/pullDownProgressIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <pulltorefresharp.android.views.RotatingPullDownIcon
+                android:id="@+id/icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="center"
+                android:src="@drawable/serious_business_arrow2" />
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                style="@style/HoloProgressMedium" />
+        </pulltorefresharp.android.views.PullDownProgressIndicator>
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/ptrsharp_sb_header_text"
+            android:shadowColor="@color/ptrsharp_sb_header_text_shadow"
+            android:shadowDy="1"
+            android:shadowDx="0"
+            android:shadowRadius="0.8"
+            android:text="@string/ptrsharp_pull_to_refresh" />
+    </RelativeLayout>
+</LinearLayout>

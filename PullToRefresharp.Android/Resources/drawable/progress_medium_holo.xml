@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--- This is straight from the AOSP.
+    I've added it for backwards compatibility -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <rotate
+             android:drawable="@drawable/spinner_20_outer_holo"
+             android:pivotX="50%"
+             android:pivotY="50%"
+             android:fromDegrees="0"
+             android:toDegrees="1080" />
+    </item>
+    <item>
+        <rotate
+             android:drawable="@drawable/spinner_20_inner_holo"
+             android:pivotX="50%"
+             android:pivotY="50%"
+             android:fromDegrees="720"
+             android:toDegrees="0" />
+    </item>
+</layer-list>

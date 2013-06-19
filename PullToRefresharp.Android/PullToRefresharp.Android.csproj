@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{27583AAA-AAE8-4E01-A962-6DCE5E0E3A4B}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>PullToRefresharp</RootNamespace>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AssemblyName>PullToRefresharp</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android.Support.v4" />
+    <Reference Include="Mono.Android" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="PullToRefresharp.Views\IPullToRefresharpPullDownIcon.cs" />
+    <Compile Include="PullToRefresharp.Views\RotatableImageView.cs" />
+    <Compile Include="PullToRefresharp.Views\ViewWrapper.cs" />
+    <Compile Include="PullToRefresharp.Widget\ScrollView.cs" />
+    <Compile Include="PullToRefresharp.Widget\ListView.cs" />
+    <Compile Include="PullToRefresharp.Widget\GridView.cs" />
+    <Compile Include="PullToRefresharp.Views\RotatingPullDownIcon.cs" />
+    <Compile Include="PullToRefresharp.Delegates\ListViewDelegate.cs" />
+    <Compile Include="PullToRefresharp.Delegates\ViewDelegate.cs" />
+    <Compile Include="PullToRefresharp.Views\IPullDownProgressIndicator.cs" />
+    <Compile Include="PullToRefresharp.Views\PullDownProgressIndicator.cs" />
+    <Compile Include="PullToRefresharp.Views\IPullToRefresharpWrappedView.cs" />
+    <Compile Include="PullToRefresharp.Views\IPullToRefresharpView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\values\attrs.xml" />
+    <AndroidResource Include="Resources\layout\ptrsharp_header.xml" />
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\drawable\ptrsharp_serious_business_gradient.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\serious_business_arrow.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\serious_business_arrow2.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\serious_business_arrow.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\serious_business_arrow2.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\serious_business_arrow.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\serious_business_arrow2.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\serious_business_arrow.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\serious_business_arrow2.png" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\spinner_20_inner_holo.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\spinner_20_outer_holo.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner_20_inner_holo.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner_20_outer_holo.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\spinner_20_inner_holo.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\spinner_20_outer_holo.png" />
+    <AndroidResource Include="Resources\drawable\progress_medium_holo.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="PullToRefresharp.Views\" />
+    <Folder Include="Resources\layout\" />
+    <Folder Include="Resources\drawable-hdpi\" />
+    <Folder Include="Resources\drawable-ldpi\" />
+    <Folder Include="Resources\drawable-mdpi\" />
+    <Folder Include="Resources\drawable-xhdpi\" />
+    <Folder Include="Resources\drawable\" />
+    <Folder Include="PullToRefresharp.Widget\" />
+    <Folder Include="PullToRefresharp.Delegates\" />
+  </ItemGroup>
+</Project>
