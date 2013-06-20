@@ -7,6 +7,7 @@
     pullToRefresharpWrapper:snapbackDuration="300">
     <pulltorefresharp.android.widget.GridView
         android:id="@+id/gridview"
+        android:cacheColorHint="@color/content_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:columnWidth="90dp"
@@ -16,6 +17,5 @@
         android:stretchMode="columnWidth"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
         android:gravity="center" />
 </pulltorefresharp.android.views.ViewWrapper>

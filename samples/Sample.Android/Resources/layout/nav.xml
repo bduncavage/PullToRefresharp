@@ -8,6 +8,7 @@
     pullToRefresharpWrapper:snapbackDuration="300">
     <pulltorefresharp.android.widget.ListView
         android:id="@android:id/list"
+        android:cacheColorHint="@color/content_background"
         android:divider="#ccc"
         android:dividerHeight="1dp"
         android:layout_height="match_parent"
