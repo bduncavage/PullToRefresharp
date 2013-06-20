@@ -24,7 +24,6 @@ namespace PullToRefresharp.Android.Views
 
         private int header_measured_height;
         private int current_scroll_y;
-        private int last_scroll_y;
         private int last_touch_y = -1;
         private bool send_down_event;
         private bool did_steal_event_stream;
@@ -293,7 +292,6 @@ namespace PullToRefresharp.Android.Views
                             new_scroll_to = -current_scroll_y;
                         }
 
-                        last_scroll_y = current_scroll_y;
                         current_scroll_y += new_scroll_to;
 
                         Header.OffsetTopAndBottom(-new_scroll_to);
