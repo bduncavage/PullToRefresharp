@@ -6,6 +6,8 @@ Add pull-to-refresh functionality to your Android app quickly and easily.
 
 PullToRefresharp is the only C# library that provides pull-to-refresh functionality to ListView, GridView, and ScrollView on Android. It is simple to integrate with, customizable and extensible.
 
+See it in action here: [PullToRefresharp in Action](http://vimeo.com/68728191)
+
 ### Simple integration:
 
 Update your layout:
