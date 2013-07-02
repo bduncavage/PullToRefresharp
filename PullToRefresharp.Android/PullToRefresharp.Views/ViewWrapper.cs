@@ -164,9 +164,7 @@ namespace PullToRefresharp.Android.Views
             refresh_state = state;
 
             if (pulldown_progress_indicator != null) {
-                PostDelayed(() => {
-                    pulldown_progress_indicator.SetRefreshState(state);
-                }, 30);
+                pulldown_progress_indicator.SetRefreshState(state);
             }
 
             switch(refresh_state) {
@@ -339,7 +337,7 @@ namespace PullToRefresharp.Android.Views
             }
 
             if (current_scroll_y < 0) {
-                StartSnapback();
+                Post(StartSnapback);
                 ContentView.IgnoreTouchEvents = false;
             }
 
@@ -424,7 +422,7 @@ namespace PullToRefresharp.Android.Views
         private void ptrView_RefreshCompleted(object sender, EventArgs args)
         {
             UpdateRefreshState(PullToRefresharpRefreshState.PullToRefresh);
-            StartSnapback();
+            Post(StartSnapback);
         }
 
         #endregion
