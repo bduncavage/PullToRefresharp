@@ -6,6 +6,7 @@ using Android.Views.Animations;
 using System;
 using Android.Content.Res;
 using Android.Support.V4.View;
+using Android.OS;
 
 namespace PullToRefresharp.Android.Views
 {
@@ -139,8 +140,17 @@ namespace PullToRefresharp.Android.Views
         {
             // TODO: Not doing this the "short hand" way because it doesn't seem to
             // work with GridView, which doesn't make sense, need to investigate.
-            var layout_params = (ViewGroup.MarginLayoutParams)Header.LayoutParameters;
+            var layout_params = (FrameLayout.LayoutParams)Header.LayoutParameters;
             layout_params.TopMargin = margin;
+
+            // Since the Xamarin Component store wants component libraries built with
+            // Froyo (for greatest compatibility), I cannot access Build.VERSION_CODES.GingerbreadMr1
+            // Its value is 10, but I'm not happy about having to do this. But I also don't want
+            // to apply this hack unnecessarily.
+            if ((int)Build.VERSION.SdkInt <= 10) {
+                // A nasty hack for fixing margins in <= GingerbreadMr1
+                layout_params.Gravity = GravityFlags.Top;
+            }
             Header.LayoutParameters = layout_params;
         }
 
