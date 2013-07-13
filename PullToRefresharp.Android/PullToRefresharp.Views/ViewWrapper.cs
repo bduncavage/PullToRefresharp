@@ -60,7 +60,11 @@ namespace PullToRefresharp.Android.Views
 
         public int SnapbackDuration;
         public bool IsPullEnabled;
-        public readonly PullToRefresharpRefreshState State;
+        public PullToRefresharpRefreshState State {
+			get {
+				return refresh_state;
+			}
+		}
 
         public IPullToRefresharpWrappedView ContentView {
             get;
