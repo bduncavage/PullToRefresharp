@@ -10,28 +10,44 @@ See it in action here: [PullToRefresharp in Action](http://vimeo.com/68728191)
 
 ### Simple integration:
 
+Add the support library:
+
+Ensure that your project has a reference to Mono.Android.Support.v4
+This allows PullToRefresharp to be compatible with Gingerbread (Android 2.3) and lower.
+
 Update your layout:
 
 ```
-<pulltorefresharp.views.ViewWrapper
+<pulltorefresharp.android.views.ViewWrapper
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
-    <pulltorefresharp.widget.GridView
+    <pulltorefresharp.android.widget.GridView
         android:id="@id/myGridView" />
 
-</pulltorefresharp.views.ViewWrapper>
+</pulltorefresharp.android.views.ViewWrapper>
 ```
 
 Hook into the `RefreshActivated` event
 
 ```csharp
-var gridView = FindViewById<IPullToRefresharpView>(Resource.Id.myGridView);
-gridView.RefreshActivated += (o, e) { RefreshMyContent(); };
+// Get a reference to the view, in this case we only care about methods in IPullToRefresharpView
+// so we pull the view out as that type.
+var myPullToRefresharpView = FindViewById<IPullToRefresharpView>(Resource.Id.myGridView);
+myPullToRefresharpView.RefreshActivated += (o, e) { RefreshMyContent(); };
 
 // when content refresh complete
-gridView.OnRefreshCompleted();
+myPullToRefresharpView.OnRefreshCompleted();
 
+// -----------------------------------------
+
+// Alternatively, you can pull the widget out of the view.
+// This way you can access it as the widget and as an IPullToRefresharpView
+var myGridView = FindViewById<PullToRefresharp.Android.Widget.GridView>(Resource.Id.myGridView);
+myGridView.RefreshActivated += (o, e) { RefreshMyContent(); };
+
+// when content refresh complete
+myGridView.OnRefreshCompleted();
 ```
 
 ### Features
