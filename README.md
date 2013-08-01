@@ -31,18 +31,7 @@ Update your layout:
 Hook into the `RefreshActivated` event
 
 ```csharp
-// Get a reference to the view, in this case we only care about methods in IPullToRefresharpView
-// so we pull the view out as that type.
-var myPullToRefresharpView = FindViewById<IPullToRefresharpView>(Resource.Id.myGridView);
-myPullToRefresharpView.RefreshActivated += (o, e) { RefreshMyContent(); };
-
-// when content refresh complete
-myPullToRefresharpView.OnRefreshCompleted();
-
-// -----------------------------------------
-
-// Alternatively, you can pull the widget out of the view.
-// This way you can access it as the widget and as an IPullToRefresharpView
+// Get a reference to the view
 var myGridView = FindViewById<PullToRefresharp.Android.Widget.GridView>(Resource.Id.myGridView);
 myGridView.RefreshActivated += (o, e) { RefreshMyContent(); };
 
@@ -52,9 +41,23 @@ myGridView.OnRefreshCompleted();
 
 ### Features
 
-Out of the box PullToFrefresharp gives you a clean pull-to-refresh header UI and assets. You can change the colors or image assets via XML attributes, or include your own fully custom header.
+Out of the box PullToFrefresharp gives you a clean pull-to-refresh header UI and assets. You can change the colors, image assets, or strings via XML attributes, or include your own fully custom header.
 
 If you want to add pull-to-refresh to a view type other than GridView, ListView, or ScrollView, you can! Simply create a subclass of the view and implement the `IPullToRefreshWrappedView` interface (there's almost nothing to it, all you need to do is write a little bit of glue code to proxy most calls to `PullToRefresharp.Delegates.ViewDelegate`).
+
+Overriding the stock header is accomplished by adding your header layout to the `ViewWrapper`, i.e.
+
+```
+<pulltorefresharp.android.views.ViewWrapper>
+    <LinearLayout>
+        <!-- your custom header -->
+    </LinearLayout>
+    <pulltorefresharp.android.widget.GridView />
+</pulltorefresharp.android.views.ViewWrapper>
+```
+
+Use [ptrsharp_header.xml](https://github.com/bduncavage/PullToRefresharp/blob/master/PullToRefresharp.Android/Resources/layout/ptrsharp_header.xml) as a reference.
+
 
 ### Fork it on GitHub!
 
