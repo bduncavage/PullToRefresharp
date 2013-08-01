@@ -78,6 +78,7 @@
     <AndroidResource Include="Resources\drawable-xhdpi\spinner_20_inner_holo.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\spinner_20_outer_holo.png" />
     <AndroidResource Include="Resources\drawable\progress_medium_holo.xml" />
+    <AndroidResource Include="Resources\values-pt-rBR\Strings.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -90,5 +91,6 @@
     <Folder Include="Resources\drawable\" />
     <Folder Include="PullToRefresharp.Widget\" />
     <Folder Include="PullToRefresharp.Delegates\" />
+    <Folder Include="Resources\values-pt-rBR\" />
   </ItemGroup>
 </Project>
