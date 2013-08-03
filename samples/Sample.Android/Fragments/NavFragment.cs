@@ -20,9 +20,17 @@ using PullToRefresharp.Android.Views;
 
 namespace Sample.Android.Fragments
 {
+    public enum NavigationDestination
+    {
+        List,
+        Grid,
+        ScrollView,
+        ListFastScroll,
+    }
+
     public class NavigationEventArgs : EventArgs
     {
-        public int NavItemPosition;
+        public NavigationDestination NavItemPosition;
     }
 
     public interface INavigationView
@@ -37,7 +45,7 @@ namespace Sample.Android.Fragments
         // hold a reference to it that's typed to IPullToRefresharpView.
         private IPullToRefresharpView ptr_view;
 
-        List<String> nav_options = new List<string>() { "ListView", "GridView", "ScrollView" };
+        List<String> nav_options = new List<string>() { "ListView", "GridView", "ScrollView", "ListView with FastScroll" };
 
         public event EventHandler<NavigationEventArgs> NavigationItemActivated;
 
@@ -101,7 +109,7 @@ namespace Sample.Android.Fragments
         {
             var h = NavigationItemActivated;
             if (h != null) {
-                h(this, new NavigationEventArgs { NavItemPosition = args.Position });
+                h(this, new NavigationEventArgs { NavItemPosition = (NavigationDestination)args.Position });
             }
         }
     }

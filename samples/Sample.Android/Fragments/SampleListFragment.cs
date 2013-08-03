@@ -29,6 +29,8 @@ namespace Sample.Android.Fragments
 
         List<String> items = MainActivity.FLAVORS.ConvertAll<string>(x => (string)x.Clone());
 
+        public bool FastScrollEnabled;
+
         public SampleListFragment() : base()
         {
         }
@@ -45,6 +47,8 @@ namespace Sample.Android.Fragments
             while (items.Count < 100) {
                 items.AddRange(items);
             }
+
+            ListView.FastScrollEnabled = FastScrollEnabled;
 
             if (ptr_view == null && ListView is IPullToRefresharpView) {
                 ptr_view = (IPullToRefresharpView)ListView;
