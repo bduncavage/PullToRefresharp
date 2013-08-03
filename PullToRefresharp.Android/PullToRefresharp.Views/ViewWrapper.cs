@@ -260,6 +260,18 @@ namespace PullToRefresharp.Android.Views
                 return base.OnTouchEvent(e);
             }
 
+            if (ContentView is AbsListView && ((AbsListView)ContentView).FastScrollEnabled) {
+                // An adimittedly crude way to determine if touch is in fast scroll, but
+                // should accomplish the goal of not displaying ptr header.
+                // This is crude because there is not a definitive way to determine
+                // a) if the fast scroller is visible or
+                // b) the width of the scroller
+                var fastScrollWidth = Resources.GetDimensionPixelSize(Resource.Dimension.fastscroll_thumb_width);
+                if (Resources.DisplayMetrics.WidthPixels - e.RawX < fastScrollWidth) {
+                    return false; // let the list view handle this
+                }
+            }
+
             switch(e.ActionMasked) {
                 case MotionEventActions.Down:
                     last_touch_y = ContentView.IsAtTop ? (int)e.RawY : -1;
