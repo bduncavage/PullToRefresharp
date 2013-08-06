@@ -40,6 +40,7 @@ namespace PullToRefresharp.Android.Views
         private int header_background_res_id;
         private ColorStateList header_text_color;
         private int pulldown_icon_drawable_res_id;
+        private int fastscroll_thumb_width;
 
         private Scroller scroller;
         private IPullDownProgressIndicator pulldown_progress_indicator;
@@ -131,6 +132,11 @@ namespace PullToRefresharp.Android.Views
             pulldown_tension_factor = a.GetFloat(Resource.Styleable.PullToRefresharpWrapper_pullDownTension, 0.5f);
             SnapbackDuration = a.GetInt(Resource.Styleable.PullToRefresharpWrapper_snapbackDuration, 400);
             IsPullEnabled = a.GetBoolean(Resource.Styleable.PullToRefresharpWrapper_pullEnabled, true);
+
+            fastscroll_thumb_width = a.GetDimensionPixelSize(Resource.Styleable.PullToRefresharpWrapper_fastScrollThumbWidth, -1);
+            if (fastscroll_thumb_width < 0) {
+                fastscroll_thumb_width = Resources.GetDimensionPixelSize(Resource.Dimension.fastscroll_thumb_width);
+            }
 
             // Enforce the constraint that both or none of the attributes headerId and viewId are set
             if (header_res_id > 0 && content_view_res_id == 0 || content_view_res_id > 0 && header_res_id == 0) {
@@ -266,8 +272,7 @@ namespace PullToRefresharp.Android.Views
                 // This is crude because there is not a definitive way to determine
                 // a) if the fast scroller is visible or
                 // b) the width of the scroller
-                var fastScrollWidth = Resources.GetDimensionPixelSize(Resource.Dimension.fastscroll_thumb_width);
-                if (Resources.DisplayMetrics.WidthPixels - e.RawX < fastScrollWidth) {
+                if (Resources.DisplayMetrics.WidthPixels - e.RawX < fastscroll_thumb_width) {
                     return false; // let the list view handle this
                 }
             }

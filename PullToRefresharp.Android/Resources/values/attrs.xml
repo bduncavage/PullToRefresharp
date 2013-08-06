@@ -17,6 +17,10 @@
         <attr name="headerIconDrawable" format="reference" />
 
         <attr name="pullEnabled" format="boolean" />
+
+        <!-- If you are overriding the default fastscroll
+            drawable, set this to match the width -->
+        <attr name="fastScrollThumbWidth" format="dimension" />
     </declare-styleable>
 
 </resources>
