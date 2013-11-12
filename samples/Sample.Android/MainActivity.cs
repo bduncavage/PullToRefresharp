@@ -27,6 +27,7 @@ namespace Sample.Android
         private SampleListFragment list_fragment;
         private GridFragment grid_fragment;
         private ImageFragment image_fragment;
+        private ExpandableListFragment expandablelist_fragment;
 
         #region lifecycle
 
@@ -76,6 +77,9 @@ namespace Sample.Android
                 list_fragment = list_fragment ?? new SampleListFragment();
                 list_fragment.FastScrollEnabled = true;
                 transaction.Replace(containerResId, list_fragment);
+            } else if (args.NavItemPosition == NavigationDestination.ExpandableList) {
+                expandablelist_fragment = expandablelist_fragment ?? new ExpandableListFragment();
+                transaction.Replace(containerResId, expandablelist_fragment);
             }
 
             transaction.AddToBackStack(null);
