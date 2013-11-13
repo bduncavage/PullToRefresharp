@@ -26,6 +26,7 @@ namespace Sample.Android.Fragments
         Grid,
         ScrollView,
         ListFastScroll,
+        ExpandableList,
     }
 
     public class NavigationEventArgs : EventArgs
@@ -45,7 +46,7 @@ namespace Sample.Android.Fragments
         // hold a reference to it that's typed to IPullToRefresharpView.
         private IPullToRefresharpView ptr_view;
 
-        List<String> nav_options = new List<string>() { "ListView", "GridView", "ScrollView", "ListView with FastScroll" };
+        List<String> nav_options = new List<string>() { "ListView", "GridView", "ScrollView", "ListView with FastScroll", "ExpandableListView" };
 
         public event EventHandler<NavigationEventArgs> NavigationItemActivated;
 

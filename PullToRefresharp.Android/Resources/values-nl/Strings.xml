@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="library_name">PullToRefresharp</string>
+    <string name="ptrsharp_pull_to_refresh">Sleep omlaag om te verversen...</string>
+    <string name="ptrsharp_release_to_refresh">Laat los om te verversen...</string>
+    <string name="ptrsharp_refreshing">Laden...</string>
+</resources>
