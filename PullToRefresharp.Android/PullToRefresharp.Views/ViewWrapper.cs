@@ -229,6 +229,10 @@ namespace PullToRefresharp.Android.Views
                 return base.OnInterceptTouchEvent(ev);
             }
 
+			if (null == ContentView) {
+				return base.OnInterceptTouchEvent (ev);
+			}
+
             if (ev.ActionMasked == MotionEventActions.Down && ContentView.IsAtTop
                 && refresh_state != PullToRefresharpRefreshState.Refreshing) {
                 did_steal_event_stream = false;
@@ -265,6 +269,10 @@ namespace PullToRefresharp.Android.Views
             if (!IsPullEnabled) {
                 return base.OnTouchEvent(e);
             }
+
+			if (null == ContentView) {
+				return base.OnTouchEvent(e);
+			}
 
             if (ContentView is AbsListView && ((AbsListView)ContentView).FastScrollEnabled) {
                 // An adimittedly crude way to determine if touch is in fast scroll, but
