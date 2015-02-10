@@ -5,3 +5,4 @@ obj/
 xam/
 Resource.designer.cs
 .DS_Store
+packages/
