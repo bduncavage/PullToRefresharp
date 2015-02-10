@@ -1,0 +1,33 @@
+%YAML 1.2
+---
+
+id: pulltorefresharp
+name: PullToRefresharp
+version: 1.0.2
+summary: Add pull-to-refresh to your Xamarin.Android apps.
+
+publisher: OxyPlot.org
+publisher-url: http://github.com/bduncavage/PullToRefresharp
+src-url: http://github.com/bduncavage/PullToRefresharp
+
+details: component/Details.md
+license: component/License.md
+getting-started: component/GettingStarted.md
+
+icons: 
+  - component/icons/pulltorefresharp_128x128.png
+  - component/icons/pulltorefresharp_512x512.png
+
+
+build:
+  - PullToRefresharp.Android.sln 
+libraries:
+  android: PullToRefresharp.Android/bin/Release/PullToRefresharp.dll
+packages:
+  android: Xamarin.Android.Support.v4, Version=21.0.3.0
+
+
+samples: 
+  - name: "Android Sample"
+    summary: "Demonstrates basic usage with ListView, GridView, and ScrollView"
+    path: samples/Sample.Android.sln
